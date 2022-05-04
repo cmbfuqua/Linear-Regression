@@ -1,0 +1,9 @@
+---
+title: "R_Template"
+author: "Ben Fuqua"
+date: "5/3/2022"
+output: 
+  html_document:
+    theme: cerulean
+---
+

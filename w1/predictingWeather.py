@@ -69,7 +69,7 @@ print('RMSE: {}'.format(np.sqrt(modelf.scale)))
 modelf.summary()
 # %%
 final = new_vals.copy()
-final['temp2days'][0] = 57
+final['temp2days'][0] = 57.25
 
 chart = alt.Chart(final,title = ['Daily Max Temp In Rexburg April 2022','Prediction In Blue']).mark_point().encode(
     alt.X('day_score', title = 'Scaled Day Score',scale = alt.Scale(zero=False)),
