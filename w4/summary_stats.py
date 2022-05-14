@@ -16,4 +16,3 @@ def summary_stats(results,Ycolumn,data):
     print(f'R^2: {r2.round(2)}')
     rse = np.sqrt(results.scale)
     print(f'RSE: {rse.round(2)}')
-    print(f'confidence Intervals {results.conf_int(alpha = .05)}')

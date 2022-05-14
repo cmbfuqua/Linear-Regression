@@ -1,4 +1,19 @@
 def diagnostic_plots(X, x_name,y, model_fit=None):
+    
+  """
+  Function to reproduce the 4 base plots of an OLS model in R.
+
+  ---
+  Inputs:
+
+  X: A numpy array or pandas dataframe of the features to use in building the linear regression model
+
+  y: A numpy array or pandas series/dataframe of the target variable of the linear regression model
+
+  model_fit [optional]: a statsmodel.api.OLS model after regressing y on X. If not provided, will be
+                        generated from X, y
+  """
+
   import numpy as np
   import pandas as pd
   import seaborn as sns

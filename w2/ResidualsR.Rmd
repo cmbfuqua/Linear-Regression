@@ -10,11 +10,12 @@ output:
 ### Ben Fuqua
 
 ## Intro
-In the realm of statistics there are many ways we can create diagnostic plots to evaluate the validity of our regression model. Today, we will be talking about only 5 of them. The data I will be using is data I scraped myself from a weather website to help predict the weather 2 days in advance. We will be comparing the max temperature 2 days into the future, explained by what I call a 'day score'. This score is a weighted sum of many different values like air pressure, wind speed, wind direction, etc. 
+In the realm of statistics we have summary statistics that are used to view the fit of the model to the data. Some of these statistics can also be viewed in graphical form and the rest are proportions of the others. Today, we will be talking about only 5 of them. The data I will be using is data I scraped myself from a weather website to help predict the weather 2 days in advance. We will be comparing the max temperature 2 days into the future, explained by what I call a 'day score'. This score is a weighted sum of many different values like air pressure, wind speed, wind direction, etc. 
 
 ## Residuals
 $$  r_i = \underbrace{Y_i}_{\substack{\text{Observed} \\ \text{Y-value}}} - \underbrace{\hat{Y}_i}_{\substack{\text{Predicted} \\ \text{Y-value}}} $$
 The simplest place to start would be with the residuals, because residuals are the foundation of everything else we will talk about. Above is a plot where the blue line is our regression and the blue points are the actual data points. The red line represents the residuals. The residual is nothing more than the difference between the observed value ${Y_{i}}$ and what was predicted $\hat{Y_{i}}$. The residual is denoted by the value $r_i$ and the equation: 
+
 
 ![](residuals_basic.png)
 
@@ -26,6 +27,8 @@ Earlier, when we talked about diagnostic plots and how they help us assess the q
 ### Sum of Squared Errors 
 $$\text{SSE} = \sum_{i=1}^n \left(Y_i - \hat{Y}_i\right)^2$$
 Above, is the equation for the Sum of Squared Errors or SSE for short. This symbol $\sum_{i=1}^n$ may seem confusing, but it is saying take each data point (i) and plug it into the equation, square your answer, then add up all of the points you have i -> n number of samples. So, it is the sum of all of your residuals (errors) squared. To help us visualize this better, look at the graphic below. As you can see, it is literally the sum of squares. The area of a square is $L^2$ or $Residual^2$, so we are just adding up the area of each of the squares you see below. *NOTE: They do not look like squares because the x and the y axis are not on the same scale*. 
+
+
 ![](sse.png)
 
 ### Sum of Squares Regression
@@ -59,12 +62,23 @@ $$
 \text{SSTO} = \sum_{i=1}^n \left(Y_i - \bar{Y}\right)^2
 $$
 So, if $R^2 = 1$ then that means $SSR = SSTO$ because $SSE = 0$. The SSE would be 0 if the points fell directly on the chart as they do in Chart A down below. Also, if $R^2 = 0$ then that means $SSR = 0$ because the points don't fall on the line, but the line falls directly on  the mean, $\bar{Y}$ as it is show in Chart B down below where $\bar{Y} = .11$
+
+
 #### Chart A
+
+
 ![](ssechart.png)
+
+
 #### ChartB
+
+
 ![](ssrchart.png)
 
+
 ## Conclusion
+
+
 Over all, there are many different ways to assess the fit of your model. Remember these 3 things:
 - It is always better to have a low SSE value 
 - Do not have a small SSR value
